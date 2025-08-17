@@ -16,7 +16,7 @@ def main():
     Clock = pygame.time.Clock()
     dt = 0
     
-    # define container groups
+    # define container groups & game objects
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
@@ -41,6 +41,10 @@ def main():
             if a.is_collision(player) == True:
                 print("Game over!")
                 sys.exit()
+            for s in shots:
+                if a.is_collision(s) == True:
+                    s.kill()
+                    a.split()
         for d in drawable:
             d.draw(screen)
         pygame.display.flip()
