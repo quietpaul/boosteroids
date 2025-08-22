@@ -27,6 +27,7 @@ def main():
     AsteroidField.containers = (updatable,)
     Shot.containers = (shots, updatable, drawable)
 
+    # define key variables
     player = Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
     asteroid_field = AsteroidField()
     
